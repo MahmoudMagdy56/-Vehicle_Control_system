@@ -1,0 +1,14 @@
+/*(3) Write a C function that use the bubble sort algorithm to sort
+an integer array in ascending order (search for the bubble sorting
+algorithm).*/
+
+#include <stdio.h>
+
+int main (void)
+{
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+    float x;
+    x=(float)22/7;
+    printf("%f",x);
+}

@@ -1,0 +1,30 @@
+/*(3) Write a C function that use the bubble sort algorithm to sort
+an integer array in ascending order (search for the bubble sorting
+algorithm).*/
+
+#include <stdio.h>
+int fun (char *c)
+{
+	int speed;
+	switch (*c)
+		{
+		case 'G' :
+			speed=100;
+			break;
+		case 'O' :
+			speed=30;
+			break;
+		case 'R' :
+			speed=0;
+			break;
+		default :
+			printf("Invalid Choice\n");
+		}
+		return speed;
+}
+int main (void)
+{
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+
+}

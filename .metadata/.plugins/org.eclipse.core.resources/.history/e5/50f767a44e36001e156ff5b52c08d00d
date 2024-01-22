@@ -1,0 +1,88 @@
+/* C Project By Mahmoud Magdy */
+
+#include <stdio.h>
+#include "File.h"
+int main (void)
+{
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+
+	char choice1;
+	do{ // *start of do while loop 1*
+		Print_Options1(); // Display the menu of vehicle control system specifications.
+		scanf(" %c", &choice1);
+
+	switch (choice1)
+	{  // *start of switch case option 1*
+	case 'c' :    // Quit the system choice.
+		printf("Quited from the system\n");
+		break;
+	case 'b' :    // Turn off the vehicle engine choice.
+		printf("Turned off the vehicle system\n \n");
+		break;
+	case 'a' :    // Turn on the vehicle engine choice.
+
+		char choice2;
+
+		do{ // **start of do while loop 2**
+		Print_Options2(); // Display the sensors set menu
+		scanf(" %c",&choice2);
+		switch (choice2)
+		{ // **start of switch case option 2**
+		int Room_Temperature_data;
+		float Set_Temperature;
+
+		case 'b' :// Set the traffic light color.
+			char Traffic_Light_data;
+			int Vehicle_Speed;
+			printf("Please, Choose the traffic light color from: G or O or R\n");
+			scanf(" %c",&Traffic_Light_data);
+			Vehicle_Speed = Set_Vehicle_Speed(&Traffic_Light_data);// Use Set_Vehicle_Speed Function to calculate the speed
+
+		case 'c' : // Set the room temperature (Temperature Sensor).
+			int AC;
+			printf("Please, Enter the temperature of the room\n");
+			scanf("%d",&Room_Temperature_data);
+			Set_Temperature=Room_Temperature_Controller1(&Room_Temperature_data);// Pass by value to the Room_Temperature_Controller Function
+			AC=Room_Temperature_Controller2(&Room_Temperature_data);
+
+		case 'd' : // Set the engine temperature (Engine Temperature Sensor).
+			int Engine_Temperature_Controller;
+			int Engine_Temperature_data;
+			float Set_Temperature_Engine;
+			printf("Please, Enter the temperature of the engine\n");
+			scanf("%d",&Engine_Temperature_data);
+			Set_Temperature_Engine=Engine_Temperature_Function1(&Engine_Temperature_data);
+			Engine_Temperature_Controller=Engine_Temperature_Function2(&Engine_Temperature_data);
+			if (Vehicle_Speed==30)
+			{
+				AC=1;
+				Set_Temperature=(float)Set_Temperature*(5/4)+1;
+
+				Engine_Temperature_Controller=1;
+				Set_Temperature_Engine=(float)Set_Temperature_Engine*(5/4)+1;
+			}
+			printf("Engine State: 1\n");
+			printf("AC: %d\n",AC);
+				printf("Vehicle Speed: %d km/hr\n",Vehicle_Speed);
+				printf("Room Temperature: %f\n",Set_Temperature);
+				printf("Engine Temperature Controller State: %d\n",Engine_Temperature_Controller);
+				printf("Engine Temperature: %f\n",Set_Temperature_Engine);
+		case 'a' : //Turn off the engine choice.
+					break;
+		default :
+			printf("Invalid choice. Please, enter a valid choice\n");
+		} // **end of switch case option 2**
+		}while(choice2!='a'); // **end of do while loop 2**
+
+		break;
+
+	default :
+		printf("Invalid choice. Please, enter a valid choice\n");
+	} // *end of switch case option 1*
+	}while (choice1=='b');  // *end of do while loop 1*
+
+
+
+	return 0;
+}

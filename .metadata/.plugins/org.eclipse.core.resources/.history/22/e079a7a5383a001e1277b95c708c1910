@@ -1,0 +1,41 @@
+/*(1) The sum of an array is the sum of its individual elements. For
+example, if an array is numbers = {1, 2, 3, 4}, the sum of the array
+is 1+2+3+4 = 10.
+Function Description: Complete the function summation. The
+function must return the integer sum of the numbers array.
+ int summation(int numbers_size, int* numbers)*/
+#include <stdio.h>
+int Set_Vehicle_Speed (char *Traffic_Light_data)
+{
+	int Vehicle_Speed;
+		switch (*Traffic_Light_data)
+		{
+		case 'G' :
+			Vehicle_Speed=100;
+			break;
+		case 'O' :
+			Vehicle_Speed=30;
+			break;
+		case 'R' :
+			Vehicle_Speed=0;
+			break;
+		default :
+			printf("Invalid Choice\n");
+		}
+		return Vehicle_Speed;
+}
+
+int main (void)
+{
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+	char Traffic_Light_data;
+	int (*ptr_vehicle_speed) (char*);
+	ptr_vehicle_speed=Set_Vehicle_Speed;
+	int Vehicle_Speed;
+	printf("Please, Choose the traffic light color from: G or O or R\n");
+	scanf(" %c",&Traffic_Light_data);
+	Vehicle_Speed=(*ptr_vehicle_speed)(&Traffic_Light_data);
+	printf("%d",Vehicle_Speed);
+	return 0;
+}

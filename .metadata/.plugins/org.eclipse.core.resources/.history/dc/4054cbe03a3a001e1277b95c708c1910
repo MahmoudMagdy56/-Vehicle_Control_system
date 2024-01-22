@@ -1,0 +1,39 @@
+/*(1) The sum of an array is the sum of its individual elements. For
+example, if an array is numbers = {1, 2, 3, 4}, the sum of the array
+is 1+2+3+4 = 10.
+Function Description: Complete the function summation. The
+function must return the integer sum of the numbers array.
+ int summation(int numbers_size, int* numbers)*/
+#include <stdio.h>
+	int Temperature_Controller (int* Room_Temperature_data)
+	{
+		int AC;
+		if(*Room_Temperature_data<10)
+		{
+			AC=1; // 1 --> ON
+			*Room_Temperature_data=20;
+		}
+		else if(Room_Temperature_data>30)
+		{
+			AC=1;
+			*Room_Temperature_data=20;
+		}
+		else
+		{
+			AC=0;  //  0 --> OFF
+		}
+		return AC;
+	}
+int main (void)
+{
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+	int AC,Room_Temperature_data;
+	int (*ptr_room_temperature_data)(int*);
+	ptr_room_temperature_data = Temperature_Controller;
+	printf("Please, Enter the temperature of the room\n");
+	scanf("%d",&Room_Temperature_data);
+	AC = (*ptr_room_temperature_data)(&Room_Temperature_data);
+	printf("%d %d",Room_Temperature_data,AC);
+	return 0;
+}

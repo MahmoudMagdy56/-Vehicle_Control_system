@@ -1,0 +1,6 @@
+void Print_Options1 (void);
+void Print_Options2 (void);
+int Set_Vehicle_Speed (char Traffic_Light_data );
+int Room_Temperature_Controller1 (int *Room_Temperature_data);
+int Engine_Temperature_Function (int *Engine_Temperature_data);
+int Room_Temperature_Controller2 (int *Room_Temperature_data);

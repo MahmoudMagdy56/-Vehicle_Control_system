@@ -1,0 +1,6 @@
+int Set_Vehicle_Speed (char *Traffic_Light_data );
+int Temperature_Controller (float* Room_Temperature_data);
+int Engine_Controller (float* Engine_Temperature_data);
+void display_current_vehicle_state (int Engine_State , int AC , int Vehicle_Speed , float Room_Temperature_data , int Engine_Temperature_Controller , float Engine_Temperature_data);
+
+

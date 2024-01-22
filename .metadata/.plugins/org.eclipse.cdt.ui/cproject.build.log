@@ -1,0 +1,22 @@
+05:55:55 **** Incremental Build of configuration Debug for project cproject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Functions.o "..\\Functions.c" 
+..\Functions.c: In function 'Set_Vehicle_Speed':
+..\Functions.c:21:33: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   21 |                                 printf("Invalid Choice\n");
+      |                                 ^~~~~~
+..\Functions.c:2:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    1 | #include "File.h"
+  +++ |+#include <stdio.h>
+    2 | 
+..\Functions.c:21:33: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   21 |                                 printf("Invalid Choice\n");
+      |                                 ^~~~~~
+..\Functions.c:21:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+gcc -o cproject.exe Functions.o main.o 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file cproject.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+05:55:55 Build Failed. 1 errors, 2 warnings. (took 354ms)
+

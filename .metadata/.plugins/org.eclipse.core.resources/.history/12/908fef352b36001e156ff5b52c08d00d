@@ -1,0 +1,6 @@
+ // Function to print the Vehicle Control System specifications
+{
+	printf("a. Turn on the vehicle engine\nb. Turn off the vehicle engine\nc. Quit the system");
+}
+
+/*---------------------------------------------------------------------------------------------*/

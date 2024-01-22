@@ -1,0 +1,5 @@
+int Set_Vehicle_Speed (char *Traffic_Light_data );
+int Temperature_Controller (int* Room_Temperature_data);
+int Room_Temperature_Controller1 (int *Room_Temperature_data);
+int Engine_Temperature_Function (int *Engine_Temperature_data);
+int Room_Temperature_Controller2 (int *Room_Temperature_data);

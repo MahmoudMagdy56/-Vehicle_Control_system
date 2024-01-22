@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+enum SystemState {
+    OFF = 0,
+    ON = 1
+};
+
+int main() {
+    enum SystemState state = OFF;
+    const char *stateStrings[] = {"OFF", "ON"};
+
+    state = ON;
+
+    printf("The system is %s\n", stateStrings[state]);
+
+    return 0;
+}

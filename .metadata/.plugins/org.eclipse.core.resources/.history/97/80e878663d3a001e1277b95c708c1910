@@ -1,0 +1,84 @@
+#include "File.h"
+
+/*Function to set the speed of the vehicle based on traffic light color*/
+
+	int Set_Vehicle_Speed (char *Traffic_Light_data)
+	{
+		int Vehicle_Speed;
+			switch (*Traffic_Light_data)
+			{
+			case 'G' :
+				Vehicle_Speed=100;
+				break;
+			case 'O' :
+				Vehicle_Speed=30;
+				break;
+			case 'R' :
+				Vehicle_Speed=0;
+				break;
+			default :
+				Vehicle_Speed=-1;
+				printf("Invalid Choice\n");
+			}
+			return Vehicle_Speed;
+	}
+/*--------------------------------------------------------------------------------------------*/
+	int Temperature_Controller (int* Room_Temperature_data)
+		{
+			int AC;
+			if(*Room_Temperature_data<10)
+			{
+				AC=1; // 1 --> ON
+				*Room_Temperature_data=20;
+			}
+			else if(*Room_Temperature_data>30)
+			{
+				AC=1;
+				*Room_Temperature_data=20;
+			}
+			else
+			{
+				AC=0;  //  0 --> OFF
+			}
+			return AC;
+		}
+/**********************************************************************************************/
+int Engine_Temperature_Function1 (int *Engine_Temperature_data) // for set Engine Temperature controller
+{
+
+	int Engine_Temperature_Controller;
+	if((*Engine_Temperature_data)<100)
+	{
+
+		Engine_Temperature_Controller=1;
+	}
+	else if((*Engine_Temperature_data)>150)
+	{
+
+		Engine_Temperature_Controller=1;
+	}
+	else
+	{
+		Engine_Temperature_Controller=0;
+	}
+	return Engine_Temperature_Controller;
+}
+
+/*********************************************************************************************/
+int Engine_Temperature_Function2 (int *Engine_Temperature_data) // for set Temperature Engine
+{
+	int Set_Temperature_Engine;
+
+	if((*Engine_Temperature_data)<100)
+	{
+		Set_Temperature_Engine=125;
+
+	}
+	else if((*Engine_Temperature_data)>150)
+	{
+		Set_Temperature_Engine=125;
+
+	}
+	return Set_Temperature_Engine;
+}
+

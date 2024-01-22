@@ -1,0 +1,11 @@
+void Ask_Functions (char answer)
+{
+	switch (answer)
+	{
+	case 'a' :
+	case 'b' :
+	case 'c' :
+		break;
+
+	}
+}

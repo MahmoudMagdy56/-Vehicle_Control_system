@@ -1,0 +1,11 @@
+void Print_Options1 (void) // Function to print the Vehicle Control System specifications
+{
+	printf("a. Turn on the vehicle engine\n");
+	printf("b. Turn off the vehicle engine\n");
+	printf("c. Quit the system\n");
+}
+/*---------------------------------------------------------------------------------------------*/
+void Print_Options2 (void)
+{
+
+}

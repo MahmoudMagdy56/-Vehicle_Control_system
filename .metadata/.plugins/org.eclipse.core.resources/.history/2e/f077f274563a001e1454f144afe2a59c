@@ -1,0 +1,100 @@
+#include "File.h"
+
+/* Function to set the speed of the vehicle based on traffic light color. */
+
+	int Set_Vehicle_Speed (char *Traffic_Light_data)
+	{
+		int Vehicle_Speed;
+			switch (*Traffic_Light_data)
+			{
+			case 'G' :
+				Vehicle_Speed=100;
+				break;
+			case 'O' :
+				Vehicle_Speed=30;
+				break;
+			case 'R' :
+				Vehicle_Speed=0;
+				break;
+			default :
+				Vehicle_Speed=-1;
+				printf("Invalid Choice\n");
+				break;
+			}
+			return Vehicle_Speed;
+	}
+/*--------------------------------------------------------------------------------------------*/
+	/* Function to control the room temperature and AC. */
+	int Temperature_Controller (float* Room_Temperature_data)
+		{
+			int AC;
+			if(*Room_Temperature_data<10)
+			{
+				AC=1; // 1 --> ON
+				*Room_Temperature_data=20;
+			}
+			else if(*Room_Temperature_data>30)
+			{
+				AC=1;
+				*Room_Temperature_data=20;
+			}
+			else
+			{
+				AC=0;  //  0 --> OFF
+			}
+			return AC;
+		}
+/**********************************************************************************************/
+	/* Function to control engine temperature and engine temperature controller. */
+	int Engine_Controller (float* Engine_Temperature_data)
+	{
+		int Engine_Temperature_Controller;
+		if(*Engine_Temperature_data<100)
+		{
+			Engine_Temperature_Controller=1;  //1 --> ON
+			*Engine_Temperature_data=125;
+		}
+		else if(*Engine_Temperature_data>150)
+		{
+			Engine_Temperature_Controller=1;  //1 --> ON
+			*Engine_Temperature_data=125;
+		}
+		else
+		{
+			Engine_Temperature_Controller=0;  // 0 --> OFF
+		}
+		return Engine_Temperature_Controller;
+	}
+
+/**********************************************************************************************/
+	void display_current_vehicle_state (int Engine_State , int AC , int Vehicle_Speed , float Room_Temperature_data , int Engine_Temperature_Controller , float Engine_Temperature_data)
+	{
+		printf("Engine State: %d ---> ON = 1 , OFF = 0 \n",Engine_State);
+		printf("AC: %d  ---> ON = 1 , OFF = 0 \n",AC);
+		printf("Vehicle Speed: %d km/hr\n",Vehicle_Speed);
+		printf("Room Temperature: %f\n",Room_Temperature_data);
+		printf("Engine Temperature Controller State: %d ---> ON = 1 , OFF = 0 \n",Engine_Temperature_Controller);
+		printf("Engine Temperature: %f\n",Engine_Temperature_data);
+		printf("\n");
+
+	}
+
+/**********************************************************************************************/
+
+	/*if (Vehicle_Speed==30)
+	{
+		AC=1;
+		Room_Temperature_data=Room_Temperature_data* ( (float)5/4 ) + 1;
+
+		Engine_Temperature_Controller = 1;
+		Engine_Temperature_data = Engine_Temperature_data* ( (float)5/4 ) + 1;
+	}
+
+	printf("Engine State: %d ---> ON = 1 , OFF = 0 \n",Engine_State);
+	printf("AC: %d  ---> ON = 1 , OFF = 0 \n",AC);
+	printf("Vehicle Speed: %d km/hr\n",Vehicle_Speed);
+	printf("Room Temperature: %f\n",Room_Temperature_data);
+	printf("Engine Temperature Controller State: %d ---> ON = 1 , OFF = 0 \n",Engine_Temperature_Controller);
+	printf("Engine Temperature: %f\n",Engine_Temperature_data);
+	printf("\n");
+	*/
